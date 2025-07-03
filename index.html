@@ -2,14 +2,26 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>🚀 Neon To-Do List</title>
+  <title>To-Do List Web App</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container">
-    <h1>To-Do List Web App</h1>
+  <header>
+    <h1>🚀 Neon To-Do List</h1>
+    <div class="hamburger" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <nav id="mobileMenu">
+      <a href="#form">Add Task</a>
+      <a href="#pendingTasks">Pending</a>
+      <a href="#completedTasks">Completed</a>
+    </nav>
+  </header>
 
-    <div class="form-card glass">
+  <div class="container">
+    <div id="form" class="form-card glass">
       <input type="text" id="title" placeholder="Task Title" required />
       <textarea id="description" placeholder="Task Description" required></textarea>
       <button onclick="addTask()">Add Task</button>

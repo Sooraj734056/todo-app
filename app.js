@@ -1,6 +1,7 @@
 let pendingTasks = [];
 let completedTasks = [];
 
+// Add Task
 function addTask() {
   const title = document.getElementById('title').value.trim();
   const description = document.getElementById('description').value.trim();
@@ -23,6 +24,7 @@ function addTask() {
   clearForm();
 }
 
+// Render Tasks
 function renderTasks() {
   const pendingList = document.getElementById('pendingTasks');
   const completedList = document.getElementById('completedTasks');
@@ -91,6 +93,12 @@ function deleteTask(id, isCompleted) {
 function clearForm() {
   document.getElementById('title').value = '';
   document.getElementById('description').value = '';
+}
+
+// Hamburger Toggle
+function toggleMenu() {
+  const menu = document.getElementById('mobileMenu');
+  menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
 }
 
 renderTasks();
