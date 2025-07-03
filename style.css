@@ -1,0 +1,149 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 40px;
+  color: #f0f0f0;
+}
+
+.container {
+  max-width: 900px;
+  width: 100%;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2.5rem;
+  background: linear-gradient(45deg, #00c3ff, #ffff1c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: neon-glow 2s infinite alternate;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+  margin-bottom: 30px;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+  border: 2px solid #00c3ff;
+  border-radius: 8px;
+  background: transparent;
+  color: #f0f0f0;
+}
+
+input::placeholder, textarea::placeholder {
+  color: #ccc;
+}
+
+button {
+  background: linear-gradient(45deg, #00c3ff, #ffff1c);
+  color: #111;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #00c3ff;
+}
+
+.tasks {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.task-section {
+  flex: 1 1 45%;
+}
+
+h2 {
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 15px;
+  margin-bottom: 10px;
+  position: relative;
+  overflow: hidden;
+  animation: slideIn 0.5s ease;
+  transition: transform 0.2s;
+}
+
+li:hover {
+  transform: translateY(-4px) scale(1.02);
+}
+
+.task-buttons {
+  margin-top: 10px;
+}
+
+.task-buttons button {
+  margin-right: 8px;
+  background: linear-gradient(45deg, #ff00cc, #3333ff);
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+}
+
+.task-buttons button:hover {
+  box-shadow: 0 0 10px #ff00cc;
+}
+
+/* Animations */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes neon-glow {
+  from {
+    text-shadow: 0 0 5px #00c3ff, 0 0 10px #00c3ff, 0 0 20px #00c3ff;
+  }
+  to {
+    text-shadow: 0 0 10px #ffff1c, 0 0 20px #ffff1c, 0 0 30px #ffff1c;
+  }
+}
+
+@media(max-width: 768px) {
+  .tasks {
+    flex-direction: column;
+  }
+}
